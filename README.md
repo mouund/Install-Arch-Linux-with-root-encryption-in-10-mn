@@ -2,8 +2,11 @@
 
 This guide is not meant to be a reference of any sort. Here are the sources you should be referring to:
 
-[Installation guide ArchWiki](https://wiki.archlinux.org/title/installation_guide)
-[Encrypt an entire device ArchWiki](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system)
+* [Installation guide ArchWiki](https://wiki.archlinux.org/title/installation_guide)
+
+* [Encrypt an entire device ArchWiki](https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system)
+
+* [Disk preparation](https://wiki.archlinux.org/title/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive)
 
 Boot on the USB key inserted with Boot menu (F1,F12,DEL,..) [Which key](https://www.pc83.fr/tools/liste-bios-key-boot-menu-key.html)
 
@@ -37,10 +40,7 @@ Our disk will be /dev/nvme0n1. Care, if you are using HDD it can be named /dev/s
 
 # Pre encryption
 
-Optional: rewrite the disk with 0.
-[Disk preparation](https://wiki.archlinux.org/title/Dm-crypt/Drive_preparation#Secure_erasure_of_the_hard_disk_drive)
-
-TLDR:
+Optional: wipe disk.
 
 Create a container on the disk (block device) you want to use
     # cryptsetup open --type plain -d /dev/urandom /dev/<block-device> to_be_wiped
@@ -68,7 +68,8 @@ First partition boot
     ENTER # First sector
     +300M # size of the partition
 
-Second parition root
+Second partition root
+
     n
     p
     ENTER # Default number 2
