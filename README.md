@@ -1,5 +1,3 @@
-# Quick guide to set up /root encrypted Arch Linux easily and quickly
-
 This guide is not meant to be a reference of any sort. Here are the sources you should be referring to:
 
 * [Installation guide ArchWiki](https://wiki.archlinux.org/title/installation_guide)
@@ -81,7 +79,7 @@ Now you should see two partition under your main device when using
     lsblk -f 
 
     /dev/nvme0n1
-      |_nvme0n1p1 (boot partition, grub etc..)
+      |_nvme0n1p1 --> the boot one (bootloader etc..)
       |_nvme0n1p2 --> the root one (where all system will sit)
 
 # Formating & Encryption of /root
@@ -108,10 +106,10 @@ Mount the parition to /mnt ( for the installation)
 
 Optional but recommended, test that the decrypting cycle works as intended:
 
-		# umount /mnt
-		# cryptsetup close root
-		# cryptsetup open /dev/nvme0n1p2 root
-		# mount /dev/mapper/root /mnt
+    # umount /mnt
+    # cryptsetup close root
+    # cryptsetup open /dev/nvme0n1p2 root
+    # mount /dev/mapper/root /mnt
 
 2 - Boot partition
 
@@ -152,6 +150,7 @@ Locales & Keyboard Layout:
 > :warning: Edit '/etc/locale.gen' uncomment en_US.UTF-8 UTF-8 if you are French e.g: uncomment fr_FR.UTF-8 UTF-8
 
     # locale-gen
+
 
     # echo LANG=en_US.UTF-8 > /etc/locale.conf 
 
