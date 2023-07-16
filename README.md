@@ -50,7 +50,7 @@ Verify existance:
     # lsblk
     NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
     nvme0n1   8:0    0  1.8T  0 disk
-   **└─to_be_wiped** 252:0    0  1.8T  0 crypt
+     └─to_be_wiped 252:0    0  1.8T  0 crypt
 
 Write zeros on the mapped disk container:
 
