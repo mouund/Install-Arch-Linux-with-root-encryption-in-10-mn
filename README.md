@@ -196,11 +196,15 @@ Change the partition in the following line if needed aswell
 
 Exit chroot:
 
-   # exit
+    # exit
 
 Unmount /mnt
 
-   # umount -R /mnt
+    # umount -R /mnt
 
-Reboot unplug the USB installation medium before the boot process, you should be greeted by GRUB. Then you will be asked to unlock your root partition. Then you are DONE !
+Reboot
+
+    # reboot
+
+Unplug the USB installation medium before the boot process, you should be greeted by GRUB. Then you will be asked to unlock your root partition. Then you are DONE !
  
